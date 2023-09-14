@@ -1,0 +1,23 @@
+# Changes here will be overwritten by Copier
+_commit: 0.0.31
+_src_path: gh:edgarrmondragon/singer-tap-copier-template
+author_email: edgarrm358@gmail.com
+author_fullname: Edgar Ramírez-Mondragón
+author_username: edgarrmondragon
+dependabot_update_time: '10:00'
+dependabot_update_timezone: UTC
+python_main_version: '3.11'
+repository_name: tap-zendesk
+repository_namespace: edgarrmondragon
+repository_provider: github.com
+repository_visibility: public
+tap_auth_method: Basic Auth
+tap_id: tap-zendesk
+tap_package_command_line_name: tap-zendesk
+tap_package_distribution_name: tap-zendesk
+tap_package_import_name: tap_zendesk
+tap_source_description: Unlock the power of customer experiences
+tap_source_id: Zendesk
+tap_source_name: Zendesk
+tap_stream_type: REST
+vscode_files: true

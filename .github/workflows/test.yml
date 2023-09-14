@@ -1,0 +1,70 @@
+name: Test tap-zendesk
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tap_zendesk/**
+      - tests/**
+      - noxfile.py
+      - poetry.lock
+      - pyproject.toml
+      - .github/workflows/test.yml
+      - .github/workflows/constraints.txt
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - tap_zendesk/**
+      - tests/**
+      - noxfile.py
+      - poetry.lock
+      - pyproject.toml
+      - .github/workflows/test.yml
+      - .github/workflows/constraints.txt
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_COLOR: "1"
+      NOXPYTHON: ${{ matrix.python-version }}
+      NOXSESSION: tests
+      PIP_CONSTRAINT: .github/workflows/constraints.txt
+      SETUPTOOLS_USE_DISTUTILS: stdlib
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3.5.3
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4.7.0
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Upgrade pip
+      run: |
+        pip install pip
+        pip --version
+
+    - name: Install Poetry
+      run: |
+        pipx install poetry
+        poetry --version
+        poetry self show plugins
+
+    - name: Install Nox
+      run: |
+        pipx install nox
+        pipx inject nox nox-poetry
+        nox --version
+
+    - name: Run tests
+      env:
+        TAP_ZENDESK_SUBDOMAIN: ${{ secrets.ZENDESK_SUBDOMAIN }}
+        TAP_ZENDESK_AUTH_EMAIL_ADDRESS: ${{ secrets.ZENDESK_EMAIL }}
+        TAP_ZENDESK_AUTH_API_TOKEN: ${{ secrets.ZENDESK_API_TOKEN }}
+      run: |
+        nox
