@@ -30,5 +30,5 @@ StandardTapTests = get_tap_test_class(
 )
 
 
-class TestTapZendesk(StandardTapTests):
+class TestTapZendesk(StandardTapTests):  # type: ignore[misc, valid-type]
     """Run standard tap tests on Zendesk."""

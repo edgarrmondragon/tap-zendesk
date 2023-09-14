@@ -36,7 +36,7 @@ plugins:
       kind: string
       label: Email Address
       description: Email address for Zendesk account
-    
+
     - name: auth.api_token
       kind: string
       label: API Token
