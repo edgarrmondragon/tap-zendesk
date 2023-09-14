@@ -29,6 +29,18 @@ Built with the [Meltano Tap SDK](https://sdk.meltano.com) for Singer Taps.
 
 Other streams are available for sponsors.
 
+The following streams will be made generally available when the corresponding sponsorship milestone is reached:
+
+| Stream name     | API endpoint                                                           | Sponsorship Milestone |
+| --------------- | ---------------------------------------------------------------------- | --------------------- |
+| tickets         | [`GET /api/v2/tickets`][api-list-tickets]                              | $50                   |
+| groups          | [`GET /api/v2/groups`][api-list-groups]                                | $100                  |
+| ticket_comments | [`GET /api/v2/tickets/{ticket_id}/comments`][api-list-ticket-comments] | $500                  |
+
+### Incremental Replication
+
+Incremental replication is not supported. See https://github.com/edgarrmondragon/tap-zendesk/issues/3.
+
 ## Settings
 
 | Setting              | Required | Default | Description                                                                                                                                 |
@@ -154,3 +166,6 @@ See the [dev guide](https://sdk.meltano.com/en/latest/dev_guide.html) for more i
 develop your own taps and targets.
 
 [api-list-users]: https://developer.zendesk.com/api-reference/ticketing/users/users/#list-users
+[api-list-tickets]: https://developer.zendesk.com/api-reference/ticketing/tickets/tickets/#list-tickets
+[api-list-groups]: https://developer.zendesk.com/api-reference/ticketing/groups/groups/#list-groups
+[api-list-ticket-comments]: https://developer.zendesk.com/api-reference/ticketing/tickets/ticket_comments/#list-comments
