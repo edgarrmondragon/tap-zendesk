@@ -22,7 +22,7 @@ documentation = "https://github.com/edgarrmondragon/tap-zendesk#readme"
 
 [tool.poetry.dependencies]
 python = "<3.12,>=3.8"
-singer-sdk = "~=0.32.0"
+singer-sdk = "~=0.34.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
