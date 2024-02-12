@@ -4,35 +4,35 @@
 # https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
-updates:
-  - package-ecosystem: pip
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      timezone: "UTC"
-      time: "10:00"
-    reviewers:
-      - "edgarrmondragon"
-    commit-message:
-      prefix: "feat(deps): "
-      prefix-development: "chore(deps-dev): "
-  - package-ecosystem: pip
-    directory: "/.github/workflows"
-    schedule:
-      interval: "monthly"
-      timezone: "UTC"
-      time: "10:00"
-    reviewers:
-      - "edgarrmondragon"
-    commit-message:
-      prefix: "ci: "
-  - package-ecosystem: github-actions
-    directory: "/"
-    schedule:
-      interval: "monthly"
-      timezone: "UTC"
-      time: "10:00"
-    reviewers:
-      - "edgarrmondragon"
-    commit-message:
-      prefix: "ci: "
+updates: []
+  # - package-ecosystem: pip
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #     timezone: "UTC"
+  #     time: "10:00"
+  #   reviewers:
+  #     - "edgarrmondragon"
+  #   commit-message:
+  #     prefix: "feat(deps): "
+  #     prefix-development: "chore(deps-dev): "
+  # - package-ecosystem: pip
+  #   directory: "/.github/workflows"
+  #   schedule:
+  #     interval: "monthly"
+  #     timezone: "UTC"
+  #     time: "10:00"
+  #   reviewers:
+  #     - "edgarrmondragon"
+  #   commit-message:
+  #     prefix: "ci: "
+  # - package-ecosystem: github-actions
+  #   directory: "/"
+  #   schedule:
+  #     interval: "monthly"
+  #     timezone: "UTC"
+  #     time: "10:00"
+  #   reviewers:
+  #     - "edgarrmondragon"
+  #   commit-message:
+  #     prefix: "ci: "
