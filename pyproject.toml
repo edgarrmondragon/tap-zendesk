@@ -25,7 +25,7 @@ python = "<3.12,>=3.8"
 singer-sdk = "~=0.35.2"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.0.2"
+pytest = "^8.1.0"
 
 [tool.poetry.scripts]
 # CLI declaration
